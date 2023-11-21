@@ -34,7 +34,7 @@ cards = {"+ Enemy Shield III",
     "+ Enemy Speed III",
     "+ Yen III",
     "+ Yen II",
-    "+ Yen I"
+    "+ Enemy Shield I"
 }
 
 table.remove(options,1)
