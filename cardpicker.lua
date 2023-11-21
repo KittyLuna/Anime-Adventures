@@ -10,8 +10,6 @@ game.Players.LocalPlayer.OnTeleport:Connect(function(state)
 
         wait(2)
 
-        if getgenv().Executed then return end -- avoid multiple executions
-
         loadstring(game:HttpGet("https://raw.githubusercontent.com/KittyLuna/Anime-Adventures/main/cardpickerbeta"))()
 
     ]])
