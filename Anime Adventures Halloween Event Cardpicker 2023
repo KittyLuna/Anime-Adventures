@@ -46,9 +46,6 @@ table.insert(newoptions,v.bg.Main.Title.TextLabel)
 end
 end
 
-playergui.RoguelikeSelect.Enabled = true
-playergui.RoguelikeSelect.Enabled = false
-
 playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):Connect(function()
 
     local options = playergui:WaitForChild("RoguelikeSelect").Main.Main.Items:GetChildren()
@@ -72,3 +69,6 @@ playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):
     end   
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
 end)
+
+playergui.RoguelikeSelect.Enabled = true
+playergui.RoguelikeSelect.Enabled = false
