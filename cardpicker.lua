@@ -10,7 +10,6 @@ game.Players.LocalPlayer.OnTeleport:Connect(function(state)
 
         wait(2)
             
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ultrahub7/Ultra-Hub/main/Main.lua"))()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/KittyLuna/Anime-Adventures/main/cardpickerbeta"))()
     ]])
 
