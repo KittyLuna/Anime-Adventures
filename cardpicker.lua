@@ -13,7 +13,7 @@ game.Players.LocalPlayer.OnTeleport:Connect(function(state)
 
         if getgenv().Executed then return end -- avoid multiple executions
 
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/TrapstarKSSKSKSKKS/Main/main/TrapHub.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/KittyLuna/Anime-Adventures/main/cardpickerbeta"))()
 
     ]])
 
