@@ -1,5 +1,4 @@
-local queue_on_teleport = queue_on_teleport or syn.queue_on_teleport or fluxus.queue_on_teleport or function(...) return ... end
-
+local queue_on_teleport = queue_on_teleport or fluxus.queue_on_teleport or function(...) return ... end
 
 game.Players.LocalPlayer.OnTeleport:Connect(function(state)
 
