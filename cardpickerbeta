@@ -58,8 +58,7 @@ wait(1)
             table.insert(newoptions,v.bg.Main.Title.TextLabel)
         end
     end
-if wavenumber == nil or wavenumber == "0" then
-repeat task.wait() until wavenumber >= "1"
+
     for i=1,#cards,1 do
         if newoptions[1].Text == cards[i] then
             args = {[1] = "2"}
@@ -69,7 +68,6 @@ repeat task.wait() until wavenumber >= "1"
             args = {[1] = "3"}
         end    
     end   
-end
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
 end)
 
