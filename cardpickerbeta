@@ -36,6 +36,12 @@ cards = {"+ Enemy Shield III",
     "+ Yen II",
 }
 
+local wavenum = playergui:WaitForChild("Waves"):WaitForChild("HealthBar"):WaitForChild("WaveNumber")
+
+if not wavenum then
+repeat task.wait() until wavenum
+end
+
 playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):Connect(function()
 wait()
 local optionframe = playergui.RoguelikeSelect.Main.Main.Items:WaitForChild("OptionFrame")
@@ -62,9 +68,5 @@ wait(1)
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
 end)
 
-local wavenum = playergui:WaitForChild("Waves"):WaitForChild("HealthBar"):WaitForChild("WaveNumber")
-
-if wavenum then
 playergui.RoguelikeSelect.Enabled = true
 playergui.RoguelikeSelect.Enabled = false
-end
