@@ -38,8 +38,8 @@ cards = {"+ Enemy Shield III",
 
 local wavenum = playergui:WaitForChild("Waves"):WaitForChild("HealthBar"):WaitForChild("WaveNumber")
 
-if not wavenum then
-repeat task.wait() until wavenum
+if wavenum.Text == "0" then
+repeat task.wait() until wavenum.Text >= "1"
 end
 
 playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):Connect(function()
