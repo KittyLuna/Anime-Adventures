@@ -2,9 +2,12 @@ repeat task.wait() until game:IsLoaded()
 
 local player = game:GetService("Players").LocalPlayer
 local playergui = player:WaitForChild("PlayerGui")
+local roguelikeselect = playergui:WaitForChild("RoguelikeSelect")
+roguelikeselect.Enabled = true
+roguelikeselect.Enabled = false
 
-newoptions = {}
-args = {}
+local newoptions = {}
+local args = {}
 cards = {"+ Enemy Shield III",
     "+ Enemy Shield II",
     "+ Enemy Shield I",
