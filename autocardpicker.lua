@@ -1,4 +1,4 @@
-repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game.Loaded
 
 local queue_on_teleport = queue_on_teleport or fluxus.queue_on_teleport or function(...) return ... end
 
