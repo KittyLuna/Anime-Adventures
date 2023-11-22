@@ -59,11 +59,29 @@ playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):
 
     for i=1,#cards,1 do
         if newoptions[1].Text == cards[i] then
-            args = {[1] = "1"}
-        elseif newoptions[2].Text == cards[i] then   
+            if newoptions[1].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(354.081, 82.188) then
             args = {[1] = "3"}
-        elseif newoptions[3].Text == cards[i] then   
+            elseif newoptions[1].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(492.865, 82.188) then
             args = {[1] = "2"}
+            elseif newoptions[1].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(215.297, 82.188) then
+            args = {[1] = "1"}
+            end
+        elseif newoptions[2].Text == cards[i] then   
+            if newoptions[2].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(354.081, 82.188) then
+            args = {[1] = "3"}
+            elseif newoptions[2].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(492.865, 82.188) then
+            args = {[1] = "2"}
+            elseif newoptions[2].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(215.297, 82.188) then
+            args = {[1] = "1"}
+            end
+        elseif newoptions[3].Text == cards[i] then   
+            if newoptions[3].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(354.081, 82.188) then
+            args = {[1] = "3"}
+            elseif newoptions[3].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(492.865, 82.188) then
+            args = {[1] = "2"}
+            elseif newoptions[3].Parent.Parent.Parent.Parent.AbsoluePosition == Vector2.new(215.297, 82.188) then
+            args = {[1] = "1"}
+            end
         end    
     end   
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
