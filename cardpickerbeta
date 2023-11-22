@@ -34,11 +34,11 @@ cards = {"+ Enemy Shield III",
 }
 
 playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):Connect(function()
-wait(1)
+wait()
 local optionframe = playergui.RoguelikeSelect.Main.Main.Items:WaitForChild("OptionFrame")
 optionframe.Active = true
 optionframe.Active = false
-
+wait(1)
     local options = playergui:WaitForChild("RoguelikeSelect").Main.Main.Items:GetChildren()
     newoptions = {}
     for i,v in pairs(options) do
