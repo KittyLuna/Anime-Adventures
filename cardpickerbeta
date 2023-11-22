@@ -59,9 +59,9 @@ playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):
 
     for i=1,26,1 do
         if newoptions[1].Text == cards[i] then
-            args = {[1] = "2"}
-        elseif newoptions[2].Text == cards[i] then   
             args = {[1] = "1"}
+        elseif newoptions[2].Text == cards[i] then   
+            args = {[1] = "2"}
         elseif newoptions[3].Text == cards[i] then   
             args = {[1] = "3"}
         end    
