@@ -35,13 +35,13 @@ cards = {"+ Enemy Shield III",
     "+ Yen III",
     "+ Yen II",
 }
-if table.find(options,playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("UIListLayout") then
+if table.find(options,playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("UIListLayout")) then
 if options[1] == playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("UIListLayout") then
 table.remove(options,1)
 end
 end
 
-if table.find(options,playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration") then
+if table.find(options,playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration")) then
 if options[1] == playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration") then
 table.remove(options,1)
 elseif options[2] == playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration") then
