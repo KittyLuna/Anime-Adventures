@@ -62,5 +62,9 @@ wait(1)
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
 end)
 
+local wavenum = playergui:FindFirstChild("Waves"):FindFirstChild("HealthBar"):FindFirstChild("WaveNumber")
+
+if wavenum and if wavenum >= 2 then
 playergui.RoguelikeSelect.Enabled = true
 playergui.RoguelikeSelect.Enabled = false
+end
