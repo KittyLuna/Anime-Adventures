@@ -5,6 +5,11 @@ local playergui = player:WaitForChild("PlayerGui")
 local roguelikeselect = playergui:WaitForChild("RoguelikeSelect")
 roguelikeselect.Enabled = true
 roguelikeselect.Enabled = false
+local wavenum = playergui:WaitForChild("Waves"):WaitForChild("HealthBar"):WaitForChild("WaveNumber")
+
+if wavenum.Text == "0" or wavenum.Text == nil or not wavenum then
+repeat task.wait() until wavenum.Text >= "1" and wavenum
+end
 
 local newoptions = {}
 local args = {}
@@ -35,12 +40,10 @@ cards = {"+ Enemy Shield III",
     "+ Yen III",
     "+ Yen II",
 }
-
-local wavenum = playergui:WaitForChild("Waves"):WaitForChild("HealthBar"):WaitForChild("WaveNumber")
-
-if wavenum.Text == "0" then
-repeat task.wait() until wavenum.Text >= "1"
-end
+local wavenumber
+wavenum:GetPropertyChangedSignal("Text"):Connect(function()
+    wavenumber = wavenum.Text
+end)
 
 playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):Connect(function()
 wait()
@@ -55,7 +58,8 @@ wait(1)
             table.insert(newoptions,v.bg.Main.Title.TextLabel)
         end
     end
-
+if wavenumber == nil or wavenumber == "0" then
+repeat task.wait() until wavenumber >= "1"
     for i=1,#cards,1 do
         if newoptions[1].Text == cards[i] then
             args = {[1] = "2"}
@@ -65,6 +69,7 @@ wait(1)
             args = {[1] = "3"}
         end    
     end   
+end
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
 end)
 
