@@ -2,9 +2,6 @@ repeat task.wait() until game:IsLoaded()
 
 local player = game:GetService("Players").LocalPlayer
 local playergui = player:WaitForChild("PlayerGui")
-local options = playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):GetChildren()
-local optionframe = playergui.RoguelikeSelect.Main.Main.Items:WaitForChild("OptionFrame"):WaitForChild("bg"):WaitForChild("Main"):WaitForChild("Title"):WaitForChild("TextLabel")
-optionframe.Active = true
 
 newoptions = {}
 args = {}
@@ -35,27 +32,12 @@ cards = {"+ Enemy Shield III",
     "+ Yen III",
     "+ Yen II",
 }
-if table.find(options,playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("UIListLayout")) then
-if options[1] == playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("UIListLayout") then
-table.remove(options,1)
-end
-end
-
-if table.find(options,playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration")) then
-if options[1] == playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration") then
-table.remove(options,1)
-elseif options[2] == playergui:WaitForChild("RoguelikeSelect"):WaitForChild("Main"):WaitForChild("Main"):WaitForChild("Items"):FindFirstChild("Configuration") then
-table.remove(options,2)
-end
-end
-
-for i,v in pairs(options) do
-if v:IsA("Frame") and v.Name == "OptionFrame" and v:FindFirstChild("bg") then
-table.insert(newoptions,v.bg.Main.Title.TextLabel)
-end
-end
 
 playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):Connect(function()
+wait(1)
+local optionframe = playergui.RoguelikeSelect.Main.Main.Items:WaitForChild("OptionFrame")
+optionframe.Active = true
+optionframe.Active = false
 
     local options = playergui:WaitForChild("RoguelikeSelect").Main.Main.Items:GetChildren()
     newoptions = {}
@@ -67,29 +49,11 @@ playergui:FindFirstChild("RoguelikeSelect"):GetPropertyChangedSignal("Enabled"):
 
     for i=1,#cards,1 do
         if newoptions[1].Text == cards[i] then
-            if newoptions[1].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(354.081, 82.188) then
             args = {[1] = "3"}
-            elseif newoptions[1].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(492.865, 82.188) then
-            args = {[1] = "2"}
-            elseif newoptions[1].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(215.297, 82.188) then
-            args = {[1] = "1"}
-            end
         elseif newoptions[2].Text == cards[i] then   
-            if newoptions[2].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(354.081, 82.188) then
-            args = {[1] = "3"}
-            elseif newoptions[2].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(492.865, 82.188) then
-            args = {[1] = "2"}
-            elseif newoptions[2].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(215.297, 82.188) then
             args = {[1] = "1"}
-            end
         elseif newoptions[3].Text == cards[i] then   
-            if newoptions[3].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(354.081, 82.188) then
-            args = {[1] = "3"}
-            elseif newoptions[3].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(492.865, 82.188) then
             args = {[1] = "2"}
-            elseif newoptions[3].Parent.Parent.Parent.Parent.AbsolutePosition == Vector2.new(215.297, 82.188) then
-            args = {[1] = "1"}
-            end
         end    
     end   
        game:GetService("ReplicatedStorage").endpoints.client_to_server.select_roguelike_option:InvokeServer(unpack(args))
