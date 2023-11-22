@@ -4,7 +4,7 @@ local queue_on_teleport = queue_on_teleport or fluxus.queue_on_teleport or funct
 
 game.Players.LocalPlayer.OnTeleport:Connect(function(state)
 
-    if state ~= Enum.TeleportState.Started or state ~= Enum.TeleportState.InProgress then return end
+    if state ~= Enum.TeleportState.Started and state ~= Enum.TeleportState.InProgress then return end
 
     queue_on_teleport([[
 
