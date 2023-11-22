@@ -1,5 +1,7 @@
 repeat task.wait() until game.Loaded
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KittyLuna/Anime-Adventures/main/cardpickerbeta"))()
+
 local queue_on_teleport = queue_on_teleport or fluxus.queue_on_teleport or function(...) return ... end
 
 game.Players.LocalPlayer.OnTeleport:Connect(function(state)
@@ -16,5 +18,3 @@ game.Players.LocalPlayer.OnTeleport:Connect(function(state)
     ]])
 
 end)
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/KittyLuna/Anime-Adventures/main/cardpickerbeta"))()
