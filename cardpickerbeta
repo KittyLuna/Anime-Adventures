@@ -39,6 +39,7 @@ cards = {"+ Enemy Shield III",
     "+ Enemy Speed III",
     "+ Yen III",
     "+ Yen II",
+    "+ Yen I"
 }
 local wavenumber
 wavenum:GetPropertyChangedSignal("Text"):Connect(function()
